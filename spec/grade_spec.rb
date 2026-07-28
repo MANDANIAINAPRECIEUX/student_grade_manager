@@ -101,5 +101,41 @@ describe "validations" do
 end
 
 
+it "refuse une matière vide" do
+  expect do
+    described_class.new(
+      subject: "   ",
+      score: 16,
+      coefficient: 2
+    )
+  end.to raise_error(
+    ArgumentError,
+    "La matière ne peut pas être vide"
+  )
+end
+
+it "refuse une matière non textuelle" do
+  expect do
+    described_class.new(
+      subject: 123,
+      score: 16,
+      coefficient: 2
+    )
+  end.to raise_error(
+    ArgumentError,
+    "La matière doit être une chaîne de caractères"
+  )
+end
+
+it "supprime les espaces autour du nom de la matière" do
+  grade = described_class.new(
+    subject: "  Ruby  ",
+    score: 16,
+    coefficient: 2
+  )
+
+  expect(grade.subject).to eq("Ruby")
+end
+
 end
 

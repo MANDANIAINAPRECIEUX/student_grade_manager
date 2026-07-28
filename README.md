@@ -11,6 +11,8 @@ The project structure and gem metadata have been initialized.
 - The `Grade` class has been implemented.
 - A grade stores a subject, a score, and a coefficient.
 - Initial tests for the `Grade` class are passing.
+- Subject names must be non-empty strings.
+- Leading and trailing spaces are removed from subject names.
 
 ## Installation
 
