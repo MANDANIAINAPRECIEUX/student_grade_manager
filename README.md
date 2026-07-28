@@ -22,6 +22,25 @@ If bundler is not being used to manage dependencies, install the gem by executin
 gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 ```
 
+## Business rules
+
+- Grades must be numeric values between 0 and 20.
+- Coefficients must be numeric values greater than 0.
+- The weighted average is calculated using grades and coefficients.
+- A student is admitted when the weighted average is at least 10.
+
+### Academic mentions
+
+| Weighted average | Result |
+| --- | --- |
+| Below 10 | Failed |
+| 10 to 11.99 | Pass |
+| 12 to 13.99 | Fairly good |
+| 14 to 15.99 | Good |
+| 16 to 17.99 | Very good |
+| 18 to 20 | Excellent |
+
+
 ## Usage
 
 TODO: Write usage instructions here
