@@ -6,6 +6,9 @@ StudentGradeManager is a Ruby gem for managing student grades, calculating weigh
 
 The project structure and gem metadata have been initialized.
 
+- Initial tests for the `Grade` class have been added.
+- The project is currently in the red phase of test-driven development.
+
 ## Installation
 
 TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
@@ -31,15 +34,14 @@ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 
 ### Academic mentions
 
-| Weighted average | Result |
-| --- | --- |
-| Below 10 | Failed |
-| 10 to 11.99 | Pass |
-| 12 to 13.99 | Fairly good |
-| 14 to 15.99 | Good |
-| 16 to 17.99 | Very good |
-| 18 to 20 | Excellent |
-
+| Weighted average | Result      |
+| ---------------- | ----------- |
+| Below 10         | Failed      |
+| 10 to 11.99      | Pass        |
+| 12 to 13.99      | Fairly good |
+| 14 to 15.99      | Good        |
+| 16 to 17.99      | Very good   |
+| 18 to 20         | Excellent   |
 
 ## Usage
 
