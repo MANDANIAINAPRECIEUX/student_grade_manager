@@ -8,6 +8,9 @@ The project structure and gem metadata have been initialized.
 
 - Initial tests for the `Grade` class have been added.
 - The project is currently in the red phase of test-driven development.
+- The `Grade` class has been implemented.
+- A grade stores a subject, a score, and a coefficient.
+- Initial tests for the `Grade` class are passing.
 
 ## Installation
 
