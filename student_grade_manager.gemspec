@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.email = ["mandaniainaprecieux@yahoo.com"]
 
   spec.summary = "A Ruby gem for managing student grades and weighted averages."
-  spec.description = "StudentGradeManager calculates weighted averages, validates grades, determines admission status, and assigns academic mentions."
+  spec.description = "StudentGradeManager calculates weighted averages, validates grades, " \
+                   "determines admission status, and assigns academic mentions."
   spec.homepage = "https://github.com/MANDANIAINAPRECIEUX/student_grade_manager"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
