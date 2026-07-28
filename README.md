@@ -13,6 +13,8 @@ The project structure and gem metadata have been initialized.
 - Initial tests for the `Grade` class are passing.
 - Subject names must be non-empty strings.
 - Leading and trailing spaces are removed from subject names.
+- The `Student` class has been created.
+- A student stores a name and an initially empty grade collection.
 
 ## Installation
 
