@@ -5,12 +5,12 @@ require_relative "lib/student_grade_manager/version"
 Gem::Specification.new do |spec|
   spec.name = "student_grade_manager"
   spec.version = StudentGradeManager::VERSION
-  spec.authors = ["TODO: Write your name"]
+  spec.authors = ["ANDRIAMIARISON MANDANIAINA PRECIEUX"]
   spec.email = ["mandaniainaprecieux@yahoo.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "A Ruby gem for managing student grades and weighted averages."
+  spec.description = "StudentGradeManager calculates weighted averages, validates grades, determines admission status, and assigns academic mentions."
+  spec.homepage = "https://github.com/MANDANIAINAPRECIEUX/student_grade_manager"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 

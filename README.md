@@ -1,8 +1,10 @@
 # StudentGradeManager
 
-TODO: Delete this and the text below, and describe your gem
+StudentGradeManager is a Ruby gem for managing student grades, calculating weighted averages, determining admission status, and assigning academic mentions.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/student_grade_manager`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Project status
+
+The project structure and gem metadata have been initialized.
 
 ## Installation
 
