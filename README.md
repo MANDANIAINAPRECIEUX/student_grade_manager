@@ -19,6 +19,9 @@ The project structure and gem metadata have been initialized.
 - Leading and trailing spaces are removed from student names.
 - Students can add and store multiple grades.
 - The `add_grade` method automatically creates a `Grade` object.
+- Students can calculate their weighted average.
+- Weighted averages are rounded to two decimal places.
+- A student without grades has an average of `0.0`.
 
 ## Installation
 

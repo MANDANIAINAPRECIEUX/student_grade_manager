@@ -108,5 +108,54 @@ describe "#add_grade" do
   end
 end
 
+describe "#average" do
+  it "retourne 0.0 lorsque l'étudiant n'a aucune note" do
+    expect(student.average).to eq(0.0)
+  end
+
+  it "retourne la note lorsqu'il n'y a qu'une seule matière" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    expect(student.average).to eq(16.0)
+  end
+
+  it "calcule la moyenne pondérée des notes" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    student.add_grade(
+      subject: "Algorithmique",
+      score: 14,
+      coefficient: 2
+    )
+
+    expect(student.average).to eq(15.2)
+  end
+
+  it "arrondit la moyenne à deux décimales" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 13,
+      coefficient: 2
+    )
+
+    student.add_grade(
+      subject: "Algorithmique",
+      score: 14,
+      coefficient: 1
+    )
+
+    expect(student.average).to eq(13.33)
+  end
+end
+
+
 
 end

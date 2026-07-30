@@ -25,6 +25,20 @@ def add_grade(subject:, score:, coefficient:)
   grade
 end
 
+def average
+  return 0.0 if grades.empty?
+
+  weighted_total = grades.sum do |grade|
+    grade.score * grade.coefficient
+  end
+
+  coefficient_total = grades.sum(&:coefficient)
+
+  (weighted_total.to_f / coefficient_total).round(2)
+end
+
+
+
 
     private
 
