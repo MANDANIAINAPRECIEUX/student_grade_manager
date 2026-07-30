@@ -13,6 +13,19 @@ module StudentGradeManager
       @grades = []
     end
 
+
+def add_grade(subject:, score:, coefficient:)
+  grade = Grade.new(
+    subject: subject,
+    score: score,
+    coefficient: coefficient
+  )
+
+  @grades << grade
+  grade
+end
+
+
     private
 
     def validate_name(name)

@@ -17,6 +17,8 @@ The project structure and gem metadata have been initialized.
 - A student stores a name and an initially empty grade collection.
 - Student names must be non-empty strings.
 - Leading and trailing spaces are removed from student names.
+- Students can add and store multiple grades.
+- The `add_grade` method automatically creates a `Grade` object.
 
 ## Installation
 

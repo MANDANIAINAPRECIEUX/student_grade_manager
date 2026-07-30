@@ -44,5 +44,69 @@ describe "validations" do
   end
 end
 
+describe "#add_grade" do
+  it "ajoute une note à la liste de l'étudiant" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    expect(student.grades.length).to eq(1)
+  end
+
+  it "ajoute un objet Grade" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    expect(student.grades.first).to be_a(
+      StudentGradeManager::Grade
+    )
+  end
+
+  it "conserve les informations de la note" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    grade = student.grades.first
+
+    expect(grade.subject).to eq("Ruby")
+    expect(grade.score).to eq(16)
+    expect(grade.coefficient).to eq(3)
+  end
+
+  it "retourne la note créée" do
+    grade = student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    expect(grade).to be_a(StudentGradeManager::Grade)
+  end
+
+  it "permet d'ajouter plusieurs notes" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    student.add_grade(
+      subject: "Algorithmique",
+      score: 14,
+      coefficient: 2
+    )
+
+    expect(student.grades.length).to eq(2)
+  end
+end
+
 
 end
