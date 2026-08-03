@@ -2,12 +2,12 @@
 
 RSpec.describe StudentGradeManager::Student do
   subject(:student) do
-    described_class.new(name: "Mirana")
+    described_class.new(name: "Manda")
   end
 
   describe "#name" do
     it "retourne le nom de l'étudiant" do
-      expect(student.name).to eq("Mirana")
+      expect(student.name).to eq("Manda")
     end
   end
 
@@ -38,7 +38,7 @@ describe "validations" do
   end
 
   it "supprime les espaces autour du nom" do
-    student = described_class.new(name: " Manda")
+    student = described_class.new(name: " Manda ")
 
     expect(student.name).to eq("Manda")
   end
@@ -223,6 +223,39 @@ describe "#mention" do
 
 
 
+end
+
+describe "#report" do
+  it "génère un rapport pour un étudiant sans note" do
+    expect(student.report).to include("Étudiant : Manda")
+    expect(student.report).to include("Aucune note enregistrée")
+    expect(student.report).to include("Moyenne : 0.0")
+    expect(student.report).to include("Statut : Non admis")
+    expect(student.report).to include("Mention : Non évalué")
+  end
+
+  it "génère un rapport contenant les notes de l'étudiant" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 3
+    )
+
+    student.add_grade(
+      subject: "Algorithmique",
+      score: 14,
+      coefficient: 2
+    )
+
+    report = student.report
+
+    expect(report).to include("Étudiant : Manda")
+    expect(report).to include("Ruby : 16/20 — coefficient 3")
+    expect(report).to include("Algorithmique : 14/20 — coefficient 2")
+    expect(report).to include("Moyenne : 15.2")
+    expect(report).to include("Statut : Admis")
+    expect(report).to include("Mention : Bien")
+  end
 end
 
 
