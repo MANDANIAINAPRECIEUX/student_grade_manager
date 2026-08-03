@@ -23,6 +23,7 @@ The project structure and gem metadata have been initialized.
 - Weighted averages are rounded to two decimal places.
 - A student without grades has an average of `0.0`.
 
+
 ## Installation
 
 TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
