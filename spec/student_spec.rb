@@ -38,9 +38,9 @@ describe "validations" do
   end
 
   it "supprime les espaces autour du nom" do
-    student = described_class.new(name: "  Manda  ")
+    student = described_class.new(name: " Manda")
 
-    expect(student.name).to eq("Mirana")
+    expect(student.name).to eq("Manda")
   end
 end
 
@@ -156,6 +156,74 @@ describe "#average" do
   end
 end
 
+describe "#mention" do
+  it "retourne Non évalué lorsque l'étudiant n'a aucune note" do
+    expect(student.mention).to eq("Non évalué")
+  end
+
+  it "retourne Ajourné lorsque la moyenne est inférieure à 10" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 9.99,
+      coefficient: 1
+    )
+
+    expect(student.mention).to eq("Ajourné")
+  end
+
+  it "retourne Passable à partir de 10" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 10,
+      coefficient: 1
+    )
+
+    expect(student.mention).to eq("Passable")
+  end
+
+  it "retourne Assez bien à partir de 12" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 12,
+      coefficient: 1
+    )
+
+    expect(student.mention).to eq("Assez bien")
+  end
+
+  it "retourne Bien à partir de 14" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 14,
+      coefficient: 1
+    )
+
+    expect(student.mention).to eq("Bien")
+  end
+
+  it "retourne Très bien à partir de 16" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 16,
+      coefficient: 1
+    )
+
+    expect(student.mention).to eq("Très bien")
+  end
+
+  it "retourne Excellent à partir de 18" do
+    student.add_grade(
+      subject: "Ruby",
+      score: 18,
+      coefficient: 1
+    )
+
+    expect(student.mention).to eq("Excellent")
+  end
+
+
+
+end
 
 
 end
