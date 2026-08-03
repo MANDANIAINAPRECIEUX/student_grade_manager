@@ -47,6 +47,8 @@ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 - The weighted average is calculated using grades and coefficients.
 - A student is admitted when the weighted average is at least 10.
 
+
+
 ### Academic mentions
 
 | Weighted average | Result      |
@@ -60,7 +62,7 @@ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 
 ## Usage
 
-TODO: Write usage instructions here
+puts students.reports
 
 ## Development
 
