@@ -24,6 +24,7 @@ The project structure and gem metadata have been initialized.
 - A student without grades has an average of `0.0`.
 - Students can generate a complete result report.
 - Reports include grades, weighted average, admission status, and academic mention.
+- A complete executable usage example is available in `examples/basic_usage.rb`.
 
 ## Installation
 
