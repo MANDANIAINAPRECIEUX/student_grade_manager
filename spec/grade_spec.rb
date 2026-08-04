@@ -27,7 +27,6 @@ RSpec.describe StudentGradeManager::Grade do
     end
   end
 
-
   describe "validations" do
     it "accepte une note comprise entre 0 et 20" do
       expect do
@@ -99,7 +98,6 @@ RSpec.describe StudentGradeManager::Grade do
       end.to raise_error(ArgumentError, "Le coefficient doit être un nombre")
     end
   end
-
 
   it "refuse une matière vide" do
     expect do

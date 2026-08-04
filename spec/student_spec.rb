@@ -17,7 +17,6 @@ RSpec.describe StudentGradeManager::Student do
     end
   end
 
-
   describe "validations" do
     it "refuse un nom non textuel" do
       expect do
@@ -254,7 +253,6 @@ RSpec.describe StudentGradeManager::Student do
       expect(report).to include("Mention : Bien")
     end
   end
-
 
   describe "#report" do
     it "génère un rapport pour un étudiant sans note" do

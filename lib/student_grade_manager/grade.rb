@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module StudentGradeManager
+  # Represents a grade with a subject, score, and coefficient.
   class Grade
     attr_reader :subject, :score, :coefficient
 
