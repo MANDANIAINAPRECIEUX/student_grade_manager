@@ -31,6 +31,26 @@ The project structure and gem metadata have been initialized.
 - RubyGems publication security requires MFA.
 - Version `0.1.0` is ready to be built locally.
 
+## Local build and installation
+
+Build the gem from the project root:
+
+```bash
+gem build student_grade_manager.gemspec
+```
+
+Install the generated package locally:
+
+```bash
+gem install ./student_grade_manager-0.1.0.gem
+```
+
+Verify the installed version:
+
+```bash
+gem list student_grade_manager
+```
+
 ## Installation
 
 TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
