@@ -22,7 +22,8 @@ The project structure and gem metadata have been initialized.
 - Students can calculate their weighted average.
 - Weighted averages are rounded to two decimal places.
 - A student without grades has an average of `0.0`.
-
+- Students can generate a complete result report.
+- Reports include grades, weighted average, admission status, and academic mention.
 
 ## Installation
 
@@ -46,8 +47,6 @@ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 - Coefficients must be numeric values greater than 0.
 - The weighted average is calculated using grades and coefficients.
 - A student is admitted when the weighted average is at least 10.
-
-
 
 ### Academic mentions
 
