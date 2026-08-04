@@ -30,6 +30,9 @@ The project structure and gem metadata have been initialized.
 - Source code and changelog links are configured.
 - RubyGems publication security requires MFA.
 - Version `0.1.0` is ready to be built locally.
+- All RSpec tests pass successfully.
+- The project passes the complete RuboCop quality check.
+- Ruby source files use consistent LF line endings.
 
 ## Local build and installation
 
