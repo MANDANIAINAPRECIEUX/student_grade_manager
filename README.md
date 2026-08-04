@@ -26,6 +26,10 @@ The project structure and gem metadata have been initialized.
 - Reports include grades, weighted average, admission status, and academic mention.
 - A complete executable usage example is available in `examples/basic_usage.rb`.
 - RBS type signatures describe the public API of the `Grade` and `Student` classes.
+- Gem metadata has been finalized.
+- Source code and changelog links are configured.
+- RubyGems publication security requires MFA.
+- Version `0.1.0` is ready to be built locally.
 
 ## Installation
 
