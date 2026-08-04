@@ -25,6 +25,7 @@ The project structure and gem metadata have been initialized.
 - Students can generate a complete result report.
 - Reports include grades, weighted average, admission status, and academic mention.
 - A complete executable usage example is available in `examples/basic_usage.rb`.
+- RBS type signatures describe the public API of the `Grade` and `Student` classes.
 
 ## Installation
 
