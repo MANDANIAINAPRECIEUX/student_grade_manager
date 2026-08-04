@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
     chdir: __dir__,
     err: IO::NULL
   ) do |ls|
-        ls.readlines("\x0", chomp: true).reject do |file|
+    ls.readlines("\x0", chomp: true).reject do |file|
       (file == gemspec) ||
         file.end_with?(".gem") ||
         file.start_with?(

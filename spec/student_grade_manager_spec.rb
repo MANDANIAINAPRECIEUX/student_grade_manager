@@ -8,8 +8,7 @@ RSpec.describe StudentGradeManager do
   # it "does something useful" do
   #   expect(false).to eq(true)
   # end
-it "defines the StudentGradeManager module" do
-  expect(described_class).to be_a(Module)
-end
-
+  it "defines the StudentGradeManager module" do
+    expect(described_class).to be_a(Module)
+  end
 end

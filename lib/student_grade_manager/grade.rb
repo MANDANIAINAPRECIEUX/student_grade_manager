@@ -28,9 +28,7 @@ module StudentGradeManager
     end
 
     def validate_score(score)
-      unless score.is_a?(Numeric)
-        raise ArgumentError, "La note doit être un nombre"
-      end
+      raise ArgumentError, "La note doit être un nombre" unless score.is_a?(Numeric)
 
       return if score.between?(0, 20)
 
@@ -38,9 +36,7 @@ module StudentGradeManager
     end
 
     def validate_coefficient(coefficient)
-      unless coefficient.is_a?(Numeric)
-        raise ArgumentError, "Le coefficient doit être un nombre"
-      end
+      raise ArgumentError, "Le coefficient doit être un nombre" unless coefficient.is_a?(Numeric)
 
       return if coefficient.positive?
 

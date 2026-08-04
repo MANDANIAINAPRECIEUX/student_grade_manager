@@ -1,7 +1,17 @@
 # frozen_string_literal: true
 
 module StudentGradeManager
+  # Represents a student and manages their grades and academic results.
   class Student
+    MENTIONS = [
+      [18, "Excellent"],
+      [16, "Très bien"],
+      [14, "Bien"],
+      [12, "Assez bien"],
+      [10, "Passable"],
+      [0, "Ajourné"]
+    ].freeze
+
     attr_reader :name, :grades
 
     def initialize(name:)
@@ -43,60 +53,37 @@ module StudentGradeManager
     def mention
       return "Non évalué" if grades.empty?
 
-      case average
-      when 0...10
-        "Ajourné"
-      when 10...12
-        "Passable"
-      when 12...14
-        "Assez bien"
-      when 14...16
-        "Bien"
-      when 16...18
-        "Très bien"
-      else
-        "Excellent"
-      end
+      MENTIONS.find do |minimum_average, _mention|
+        average >= minimum_average
+      end.last
     end
 
     def report
-      lines = ["Étudiant : #{name}", "Notes :"]
+      [
+        "Étudiant : #{name}",
+        "Notes :",
+        grades_report,
+        "Moyenne : #{average}",
+        "Statut : #{admission_status}",
+        "Mention : #{mention}"
+      ].join("\n")
+    end
 
-      if grades.empty?
-        lines << "Aucune note enregistrée"
-      else
-        grades.each do |grade|
-          lines << "#{grade.subject} : #{grade.score}/20 — coefficient #{grade.coefficient}"
-        end
-          end
-
-          lines << "Moyenne : #{average}"
-          lines << "Statut : #{admitted? ? 'Admis' : 'Non admis'}"
-          lines << "Mention : #{mention}"
-
-          lines.join("\n")
-      end
-
-
-      def report
-        lines = ["Étudiant : #{name}", "Notes :"]
-
-        if grades.empty?
-          lines << "Aucune note enregistrée"
-        else
-          grades.each do |grade|
-            lines << "#{grade.subject} : #{grade.score}/20 — coefficient #{grade.coefficient}"
-          end
-        end
-
-        lines << "Moyenne : #{average}"
-        lines << "Statut : #{admitted? ? 'Admis' : 'Non admis'}"
-        lines << "Mention : #{mention}"
-
-        lines.join("\n")
-      end
-      
     private
+
+    def grades_report
+      return "Aucune note enregistrée" if grades.empty?
+
+      grades.map { |grade| format_grade(grade) }.join("\n")
+    end
+
+    def format_grade(grade)
+      "#{grade.subject} : #{grade.score}/20 — coefficient #{grade.coefficient}"
+    end
+
+    def admission_status
+      admitted? ? "Admis" : "Non admis"
+    end
 
     def validate_name(name)
       unless name.is_a?(String)
