@@ -77,6 +77,24 @@ module StudentGradeManager
           lines.join("\n")
       end
 
+
+      def report
+        lines = ["Étudiant : #{name}", "Notes :"]
+
+        if grades.empty?
+          lines << "Aucune note enregistrée"
+        else
+          grades.each do |grade|
+            lines << "#{grade.subject} : #{grade.score}/20 — coefficient #{grade.coefficient}"
+          end
+        end
+
+        lines << "Moyenne : #{average}"
+        lines << "Statut : #{admitted? ? 'Admis' : 'Non admis'}"
+        lines << "Mention : #{mention}"
+
+        lines.join("\n")
+      end
       
     private
 
