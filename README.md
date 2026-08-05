@@ -131,3 +131,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the StudentGradeManager project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/student_grade_manager/blob/master/CODE_OF_CONDUCT.md).
+
+## Releases
+
+- [Version 0.1.0](COLLER_ICI_LE_LIEN_DE_LA_RELEASE) — Initial public release
