@@ -70,6 +70,26 @@ If bundler is not being used to manage dependencies, install the gem by executin
 gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
 ```
 
+## Installation
+
+Install the gem from RubyGems:
+
+```bash
+gem install student_grade_manager
+```
+
+Or add it to your Gemfile:
+
+```ruby
+gem "student_grade_manager", "~> 0.1.0"
+```
+
+Then run:
+
+```bash
+bundle install
+```
+
 ## Business rules
 
 - Grades must be numeric values between 0 and 20.
