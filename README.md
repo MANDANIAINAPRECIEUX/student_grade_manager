@@ -33,6 +33,8 @@ The project structure and gem metadata have been initialized.
 - All RSpec tests pass successfully.
 - The project passes the complete RuboCop quality check.
 - Ruby source files use consistent LF line endings.
+- Version `0.1.0` is officially published on RubyGems.
+- The public package has been installed and tested successfully.
 
 ## Local build and installation
 
