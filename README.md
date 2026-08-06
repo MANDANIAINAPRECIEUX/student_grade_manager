@@ -302,7 +302,7 @@ require "student_grade_manager"
 Create a student:
 
 ```ruby
-student = StudentGradeManager::Student.new(name: "Mirana")
+student = StudentGradeManager::Student.new(name: "Manda")
 ```
 
 Add grades:
