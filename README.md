@@ -64,7 +64,7 @@ require "student_grade_manager"
 Créez un étudiant :
 
 ```ruby
-student = StudentGradeManager::Student.new(name: "Mirana")
+student = StudentGradeManager::Student.new(name: "Manda")
 ```
 
 Ajoutez des notes :
