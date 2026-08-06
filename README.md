@@ -1,137 +1,267 @@
 # StudentGradeManager
 
-StudentGradeManager is a Ruby gem for managing student grades, calculating weighted averages, determining admission status, and assigning academic mentions.
+StudentGradeManager est une gem Ruby permettant de gérer les notes des étudiants, de calculer les moyennes pondérées, de déterminer le statut d’admission, d’attribuer une mention académique et de générer un rapport complet.
 
-## Project status
+## Fonctionnalités
 
-The project structure and gem metadata have been initialized.
+- Création et gestion d’étudiants
+- Ajout de plusieurs notes par étudiant
+- Validation du nom de l’étudiant et des matières
+- Validation des notes comprises entre `0` et `20`
+- Validation des coefficients strictement supérieurs à `0`
+- Calcul de la moyenne pondérée
+- Vérification du statut d’admission
+- Attribution automatique d’une mention académique
+- Génération d’un rapport complet
+- Tests automatisés avec RSpec
+- Signatures de types avec RBS
 
-- Initial tests for the `Grade` class have been added.
-- The project is currently in the red phase of test-driven development.
-- The `Grade` class has been implemented.
-- A grade stores a subject, a score, and a coefficient.
-- Initial tests for the `Grade` class are passing.
-- Subject names must be non-empty strings.
-- Leading and trailing spaces are removed from subject names.
-- The `Student` class has been created.
-- A student stores a name and an initially empty grade collection.
-- Student names must be non-empty strings.
-- Leading and trailing spaces are removed from student names.
-- Students can add and store multiple grades.
-- The `add_grade` method automatically creates a `Grade` object.
-- Students can calculate their weighted average.
-- Weighted averages are rounded to two decimal places.
-- A student without grades has an average of `0.0`.
-- Students can generate a complete result report.
-- Reports include grades, weighted average, admission status, and academic mention.
-- A complete executable usage example is available in `examples/basic_usage.rb`.
-- RBS type signatures describe the public API of the `Grade` and `Student` classes.
-- Gem metadata has been finalized.
-- Source code and changelog links are configured.
-- RubyGems publication security requires MFA.
-- Version `0.1.0` is ready to be built locally.
-- All RSpec tests pass successfully.
-- The project passes the complete RuboCop quality check.
-- Ruby source files use consistent LF line endings.
-- Version `0.1.0` is officially published on RubyGems.
-- The public package has been installed and tested successfully.
+## État du projet
 
-## Local build and installation
+La version `0.1.0` est officiellement publiée sur RubyGems.
 
-Build the gem from the project root:
-
-```bash
-gem build student_grade_manager.gemspec
-```
-
-Install the generated package locally:
-
-```bash
-gem install ./student_grade_manager-0.1.0.gem
-```
-
-Verify the installed version:
-
-```bash
-gem list student_grade_manager
-```
+- Tous les tests RSpec passent avec succès
+- Le projet passe entièrement les vérifications RuboCop
+- Les fichiers Ruby utilisent des fins de ligne `LF`
+- La gem publique a été installée et testée avec succès
+- L’authentification multifacteur protège les futures publications
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-```
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-```
-
-## Installation
-
-Install the gem from RubyGems:
+Installez directement la gem depuis RubyGems :
 
 ```bash
 gem install student_grade_manager
 ```
 
-Or add it to your Gemfile:
+Vous pouvez également l’ajouter au `Gemfile` de votre application :
 
 ```ruby
 gem "student_grade_manager", "~> 0.1.0"
 ```
 
-Then run:
+Puis installez les dépendances :
 
 ```bash
 bundle install
 ```
 
-## Business rules
+## Utilisation
 
-- Grades must be numeric values between 0 and 20.
-- Coefficients must be numeric values greater than 0.
-- The weighted average is calculated using grades and coefficients.
-- A student is admitted when the weighted average is at least 10.
+Chargez la gem :
 
-### Academic mentions
+```ruby
+require "student_grade_manager"
+```
 
-| Weighted average | Result      |
-| ---------------- | ----------- |
-| Below 10         | Failed      |
-| 10 to 11.99      | Pass        |
-| 12 to 13.99      | Fairly good |
-| 14 to 15.99      | Good        |
-| 16 to 17.99      | Very good   |
-| 18 to 20         | Excellent   |
+### Créer un étudiant
 
-## Usage
+```ruby
+student = StudentGradeManager::Student.new(name: "Mirana")
+```
 
-puts students.reports
+### Ajouter des notes
 
-## Development
+```ruby
+student.add_grade(
+  subject: "Ruby",
+  score: 16,
+  coefficient: 3
+)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+student.add_grade(
+  subject: "Algorithmique",
+  score: 14,
+  coefficient: 2
+)
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### Calculer la moyenne pondérée
 
-## Contributing
+```ruby
+puts student.average
+# 15.2
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/student_grade_manager. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/student_grade_manager/blob/master/CODE_OF_CONDUCT.md).
+### Vérifier l’admission
 
-## License
+```ruby
+puts student.admitted?
+# true
+```
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+### Obtenir la mention académique
 
-## Code of Conduct
+```ruby
+puts student.mention
+# Bien
+```
 
-Everyone interacting in the StudentGradeManager project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/student_grade_manager/blob/master/CODE_OF_CONDUCT.md).
+### Générer le rapport complet
 
-## Releases
+```ruby
+puts student.report
+```
 
-- [Version 0.1.0](COLLER_ICI_LE_LIEN_DE_LA_RELEASE) — Initial public release
+Résultat attendu :
+
+```text
+Étudiant : Mirana
+Notes :
+Ruby : 16/20 — coefficient 3
+Algorithmique : 14/20 — coefficient 2
+Moyenne : 15.2
+Statut : Admis
+Mention : Bien
+```
+
+## Règles métier
+
+- Le nom d’un étudiant doit être une chaîne de caractères non vide.
+- Le nom d’une matière doit être une chaîne de caractères non vide.
+- Les espaces placés au début et à la fin des noms sont supprimés.
+- Une note doit être une valeur numérique comprise entre `0` et `20`.
+- Un coefficient doit être numérique et strictement supérieur à `0`.
+- La moyenne est pondérée selon les coefficients.
+- La moyenne est arrondie à deux décimales.
+- Un étudiant est admis lorsque sa moyenne est supérieure ou égale à `10`.
+- Un étudiant sans note possède une moyenne de `0.0`.
+- Un étudiant sans note n’est pas considéré comme admis.
+
+### Mentions académiques
+
+| Moyenne pondérée | Mention retournée |
+| ---------------- | ----------------- |
+| Aucune note      | `Non évalué`      |
+| Inférieure à 10  | `Ajourné`         |
+| De 10 à 11,99    | `Passable`        |
+| De 12 à 13,99    | `Assez bien`      |
+| De 14 à 15,99    | `Bien`            |
+| De 16 à 17,99    | `Très bien`       |
+| De 18 à 20       | `Excellent`       |
+
+## Exécuter l’exemple
+
+Clonez le dépôt, puis installez les dépendances :
+
+```bash
+bundle install
+```
+
+Exécutez ensuite l’exemple complet :
+
+```bash
+bundle exec ruby -Ilib examples/basic_usage.rb
+```
+
+L’exemple crée un étudiant, ajoute deux notes, calcule sa moyenne pondérée et affiche son rapport complet.
+
+## Développement
+
+Après avoir cloné le dépôt, préparez l’environnement :
+
+```bash
+ruby bin/setup
+```
+
+Lancez tous les tests :
+
+```bash
+bundle exec rspec
+```
+
+Vérifiez la qualité et le style du code :
+
+```bash
+bundle exec rubocop
+```
+
+Lancez la console Ruby avec la gem déjà chargée :
+
+```bash
+bundle exec ruby bin/console
+```
+
+Exécutez toutes les tâches automatisées :
+
+```bash
+bundle exec rake
+```
+
+## Construction et installation locales
+
+Construisez la gem depuis la racine du projet :
+
+```bash
+gem build student_grade_manager.gemspec
+```
+
+Cette commande génère le fichier :
+
+```text
+student_grade_manager-0.1.0.gem
+```
+
+Installez le paquet localement :
+
+```bash
+gem install ./student_grade_manager-0.1.0.gem
+```
+
+Vérifiez la version installée :
+
+```bash
+gem list student_grade_manager
+```
+
+## Signatures de types
+
+Les signatures RBS sont disponibles dans le fichier :
+
+```text
+sig/student_grade_manager.rbs
+```
+
+Elles documentent les paramètres et les types de retour de l’API publique des classes `Grade` et `Student`.
+
+## Structure principale
+
+```text
+student_grade_manager/
+├── examples/
+│   └── basic_usage.rb
+├── lib/
+│   ├── student_grade_manager/
+│   │   ├── grade.rb
+│   │   ├── student.rb
+│   │   └── version.rb
+│   └── student_grade_manager.rb
+├── sig/
+│   └── student_grade_manager.rbs
+├── spec/
+│   ├── grade_spec.rb
+│   ├── student_grade_manager_spec.rb
+│   ├── student_spec.rb
+│   └── spec_helper.rb
+├── CHANGELOG.md
+├── LICENSE.txt
+├── README.md
+└── student_grade_manager.gemspec
+```
+
+## Versions publiées
+
+- [Version 0.1.0 sur GitHub](https://github.com/MANDANIAINAPRECIEUX/student_grade_manager/releases/tag/v0.1.0) — Première version publique
+- [Gem sur RubyGems](https://rubygems.org/gems/student_grade_manager)
+
+L’historique complet des modifications est disponible dans le fichier [CHANGELOG.md](CHANGELOG.md).
+
+## Contribution
+
+Les signalements de problèmes et les propositions d’amélioration sont les bienvenus sur le [dépôt GitHub](https://github.com/MANDANIAINAPRECIEUX/student_grade_manager).
+
+Les contributeurs doivent respecter le [Code de conduite](CODE_OF_CONDUCT.md) du projet.
+
+## Licence
+
+StudentGradeManager est distribué comme logiciel open source selon les conditions de la [licence MIT](LICENSE.txt).
