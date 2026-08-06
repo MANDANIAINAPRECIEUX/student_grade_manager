@@ -1,3 +1,9 @@
+StudentGradeManager est une gem Ruby permettant de gérer les notes des étudiants, de calculer les moyennes pondérées, de déterminer le statut d’admission, d’attribuer une mention académique et de générer un rapport complet.
+
+
+
+
+
 # StudentGradeManager
 
 [🇫🇷 Français](#français) | [🇬🇧 English](#english)
