@@ -351,7 +351,7 @@ puts student.report
 Expected output:
 
 ```text
-Étudiant : Mirana
+Étudiant : Manda
 Notes :
 Ruby : 16/20 — coefficient 3
 Algorithms : 14/20 — coefficient 2
